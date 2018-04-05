@@ -5,4 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Menu -->
+    <string name="nav_searchWally">Procurar Professor</string>
+    <string name="nav_about">Sobre</string>
 </resources>
