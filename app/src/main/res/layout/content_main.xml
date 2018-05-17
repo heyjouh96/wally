@@ -9,17 +9,11 @@
     tools:showIn="@layout/app_bar_main"
     android:padding="20dp">
 
-    <TextView
-        android:id="@+id/teste"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/homeViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="clica no botão"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Botão"
-        android:onClick="testando"
-        android:layout_below="@+id/teste"/>
+    </android.support.v4.view.ViewPager>
 
 </RelativeLayout>
