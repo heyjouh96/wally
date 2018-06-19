@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * Created by Jonathan on 10/05/2018.
  */
 
-public class SearchAdapter extends RecyclerView.Adapter {
+public class WallyAdapter extends RecyclerView.Adapter {
 
     private ArrayList<String> wally;
     private Context context;
 
-    public SearchAdapter(ArrayList<String> wally, Context context) {
+    public WallyAdapter(ArrayList<String> wally, Context context) {
         this.wally = wally;
         this.context = context;
     }
@@ -26,19 +26,18 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.layout_search_wally, parent, false);
+                .inflate(R.layout.layout_wally, parent, false);
 
-        SearchViewHolder holder = new SearchViewHolder(view);
+        WallyViewHolder holder = new WallyViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        SearchViewHolder h = (SearchViewHolder) holder;
+        WallyViewHolder h = (WallyViewHolder) holder;
         String professor = wally.get(position);
         h.nome.setText(professor);
-
     }
 
     @Override
