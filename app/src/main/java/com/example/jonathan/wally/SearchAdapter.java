@@ -1,6 +1,7 @@
 package com.example.jonathan.wally;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 
 public class SearchAdapter extends RecyclerView.Adapter {
 
-    private ArrayList<String> wally;
+    private ArrayList<SearchWallyResponse> wally;
     private Context context;
 
-    public SearchAdapter(ArrayList<String> wally, Context context) {
+    public SearchAdapter(ArrayList<SearchWallyResponse> wally, Context context) {
         this.wally = wally;
         this.context = context;
     }
@@ -36,8 +37,12 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         SearchViewHolder h = (SearchViewHolder) holder;
-        String professor = wally.get(position);
-        h.nome.setText(professor);
+        String nome = wally.get(position).getNome();
+        String apelido = wally.get(position).getApelido();
+        int id = wally.get(position).getId();
+        h.txtNome.setText(nome);
+        h.txtApelido.setText(apelido);
+        h.container.setTag(""+id);
 
     }
 
@@ -45,4 +50,5 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return wally.size();
     }
+
 }

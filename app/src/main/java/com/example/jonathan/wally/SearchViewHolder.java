@@ -2,6 +2,7 @@ package com.example.jonathan.wally;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,12 +12,13 @@ import android.widget.TextView;
 
 public class SearchViewHolder extends RecyclerView.ViewHolder {
 
-    final TextView nome;
+    final TextView txtNome, txtApelido;
     final RelativeLayout container;
 
     public SearchViewHolder(View view) {
         super(view);
-        nome = view.findViewById(R.id.edtNome);
+        txtNome = view.findViewById(R.id.txtNome);
+        txtApelido = view.findViewById(R.id.txtApelido);
         container = view.findViewById(R.id.container);
     }
 }

@@ -25,7 +25,7 @@ import okhttp3.Response;
 public class SearchWally extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    SearchWallyResponse response;
+    SearchWallyResponse wally;
     TextView txtCarregando;
 
     @Override
@@ -46,7 +46,9 @@ public class SearchWally extends AppCompatActivity {
     }
 
     public void wallySchedule(View v){
+        int id = Integer.parseInt(v.getTag().toString());
         Intent it = new Intent(this, ScheduleWally.class);
+        it.putExtra("id", id);
         startActivity(it);
     }
 
@@ -77,13 +79,17 @@ public class SearchWally extends AppCompatActivity {
                     public void run() {
                         try {
                             JSONArray json = new JSONArray(myResponse);
-                            ArrayList<String> wally = new ArrayList<>();
+                            ArrayList<SearchWallyResponse> wallyArr = new ArrayList<>();
 
                             for (int i = 0; i < json.length(); i++){
-                                wally.add(json.getJSONObject(i).getString("apelido"));
+                                wally = new SearchWallyResponse(json.getJSONObject(i).getString("name"),
+                                        json.getJSONObject(i).getString("apelido"),
+                                        json.getJSONObject(i).getInt("id"));
+
+                                wallyArr.add(wally);
                             }
 
-                            recyclerView.setAdapter(new SearchAdapter(wally, SearchWally.this));
+                            recyclerView.setAdapter(new SearchAdapter(wallyArr, SearchWally.this));
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchWally.this, LinearLayoutManager.VERTICAL, false);
                             recyclerView.setLayoutManager(layoutManager);
                             txtCarregando.setText("");
