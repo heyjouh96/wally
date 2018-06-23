@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +15,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -82,7 +82,7 @@ public class SearchWally extends AppCompatActivity {
                             ArrayList<SearchWallyResponse> wallyArr = new ArrayList<>();
 
                             for (int i = 0; i < json.length(); i++){
-                                wally = new SearchWallyResponse(json.getJSONObject(i).getString("name"),
+                                wally = new SearchWallyResponse(json.getJSONObject(i).getString("nome"),
                                         json.getJSONObject(i).getString("apelido"),
                                         json.getJSONObject(i).getInt("id"));
 
