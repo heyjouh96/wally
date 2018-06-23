@@ -348,6 +348,96 @@ public class ScheduleWally extends AppCompatActivity {
                     case "6": j6.setBackgroundColor(Color.rgb(223, 240, 216));break;
                 }
             break;
+            case "11":
+                switch (horario.getSemana()){
+                    case "1": k1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": k2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": k3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": k4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": k5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": k6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "12":
+                switch (horario.getSemana()){
+                    case "1": l1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": l2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": l3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": l4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": l5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": l6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "13":
+                switch (horario.getSemana()){
+                    case "1": m1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": m2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": m3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": m4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": m5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": m6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "14":
+                switch (horario.getSemana()){
+                    case "1": n1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": n2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": n3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": n4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": n5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": n6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "15":
+                switch (horario.getSemana()){
+                    case "1": o1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": o2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": o3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": o4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": o5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": o6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "16":
+                switch (horario.getSemana()){
+                    case "1": p1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": p2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": p3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": p4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": p5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": p6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "17":
+                switch (horario.getSemana()){
+                    case "1": q1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": q2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": q3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": q4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": q5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": q6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "18":
+                switch (horario.getSemana()){
+                    case "1": r1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": r2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": r3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": r4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": r5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": r6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
+            case "19":
+                switch (horario.getSemana()){
+                    case "1": s1.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "2": s2.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "3": s3.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "4": s4.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "5": s5.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "6": s6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                }
+            break;
         }
     }
 
