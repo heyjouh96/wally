@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class SearchWally extends AppCompatActivity {
     RecyclerView recyclerView;
     SearchWallyResponse wally;
     TextView txtCarregando;
+    EditText edtPesq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +38,7 @@ public class SearchWally extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         recyclerView = findViewById(R.id.search_recycler);
         txtCarregando = findViewById(R.id.txtCarregando);
-
-        try {
-            getWallyResponse();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        edtPesq = findViewById(R.id.edtPesq);
     }
 
     public void wallySchedule(View v){
@@ -58,10 +54,23 @@ public class SearchWally extends AppCompatActivity {
         return true;
     }
 
-    private void getWallyResponse() throws IOException{
+    public void search(View v){
+
+        recyclerView.setVisibility(View.INVISIBLE);
+        txtCarregando.setText("Carregando...");
+        String filtro = edtPesq.getText().toString();
+
+        try {
+            getWallyResponse(filtro);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getWallyResponse(String filtro) throws IOException{
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://www.fatecrl.edu.br/wallyAPI/wally")
+                .url("http://www.fatecrl.edu.br/wallyAPI/wally/"+filtro)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -92,6 +101,7 @@ public class SearchWally extends AppCompatActivity {
                             recyclerView.setAdapter(new SearchAdapter(wallyArr, SearchWally.this));
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchWally.this, LinearLayoutManager.VERTICAL, false);
                             recyclerView.setLayoutManager(layoutManager);
+                            recyclerView.setVisibility(View.VISIBLE);
                             txtCarregando.setText("");
 
                         } catch (JSONException e) {
