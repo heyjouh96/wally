@@ -4,12 +4,12 @@ package com.example.jonathan.wally;
  * Created by Jonathan on 05/06/2018.
  */
 
-public class SearchWallyResponse {
+public class _SearchWallyResponse {
     private String nome;
     private String apelido;
     private int id;
 
-    public SearchWallyResponse(String nome, String apelido, int id){
+    public _SearchWallyResponse(String nome, String apelido, int id){
         this.nome = nome;
         this.apelido = apelido;
         this.id = id;
