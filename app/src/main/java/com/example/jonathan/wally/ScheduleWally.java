@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -224,7 +225,8 @@ public class ScheduleWally extends AppCompatActivity {
 
                             for (int i = 0; i < horarios.length(); i++) {
                                 horario = new WallyHorario(horarios.getJSONObject(i).getString("TB_Hora_id_hora"),
-                                        horarios.getJSONObject(i).getString("TB_Semana_id_semana"));
+                                        horarios.getJSONObject(i).getString("TB_Semana_id_semana"),
+                                        horarios.getJSONObject(i).getString("ds_sigla_curso"));
 
                                 horariosArr.add(horario);
                             }
@@ -247,195 +249,197 @@ public class ScheduleWally extends AppCompatActivity {
     }
 
     public void fillSchedule(WallyHorario horario){
+        ArrayList<Integer> colors = new ArrayList<Integer>();
+        colors = horario.getCursoColors();
         switch (horario.getHora()){
             case "1":
                 switch (horario.getSemana()){
-                    case "1": a1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": a2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": a3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": a4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": a5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": a6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": a1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": a2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": a3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": a4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": a5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": a6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "2":
                 switch (horario.getSemana()){
-                    case "1": b1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": b2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": b3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": b4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": b5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": b6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": b1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": b2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": b3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": b4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": b5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": b6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "3":
                 switch (horario.getSemana()){
-                    case "1": c1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": c2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": c3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": c4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": c5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": c6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": c1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": c2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": c3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": c4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": c5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": c6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "4":
                 switch (horario.getSemana()){
-                    case "1": d1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": d2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": d3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": d4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": d5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": d6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": d1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": d2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": d3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": d4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": d5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": d6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "5":
                 switch (horario.getSemana()){
-                    case "1": e1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": e2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": e3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": e4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": e5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": e6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": e1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": e2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": e3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": e4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": e5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": e6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "6":
                 switch (horario.getSemana()){
-                    case "1": f1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": f2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": f3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": f4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": f5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": f6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": f1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": f2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": f3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": f4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": f5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": f6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "7":
                 switch (horario.getSemana()){
-                    case "1": g1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": g2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": g3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": g4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": g5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": g6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": g1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": g2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": g3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": g4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": g5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": g6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
              break;
             case "8":
                 switch (horario.getSemana()){
-                    case "1": h1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": h2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": h3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": h4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": h5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": h6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": h1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": h2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": h3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": h4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": h5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": h6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "9":
                 switch (horario.getSemana()){
-                    case "1": i1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": i2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": i3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": i4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": i5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": i6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": i1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": i2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": i3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": i4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": i5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": i6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "10":
                 switch (horario.getSemana()){
-                    case "1": j1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": j2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": j3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": j4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": j5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": j6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": j1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": j2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": j3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": j4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": j5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": j6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "11":
                 switch (horario.getSemana()){
-                    case "1": k1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": k2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": k3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": k4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": k5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": k6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": k1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": k2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": k3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": k4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": k5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": k6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "12":
                 switch (horario.getSemana()){
-                    case "1": l1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": l2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": l3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": l4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": l5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": l6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": l1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": l2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": l3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": l4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": l5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": l6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "13":
                 switch (horario.getSemana()){
-                    case "1": m1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": m2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": m3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": m4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": m5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": m6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": m1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": m2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": m3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": m4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": m5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": m6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "14":
                 switch (horario.getSemana()){
-                    case "1": n1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": n2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": n3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": n4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": n5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": n6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": n1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": n2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": n3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": n4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": n5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": n6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "15":
                 switch (horario.getSemana()){
-                    case "1": o1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": o2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": o3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": o4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": o5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": o6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": o1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": o2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": o3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": o4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": o5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": o6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "16":
                 switch (horario.getSemana()){
-                    case "1": p1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": p2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": p3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": p4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": p5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": p6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": p1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": p2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": p3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": p4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": p5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": p6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "17":
                 switch (horario.getSemana()){
-                    case "1": q1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": q2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": q3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": q4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": q5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": q6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": q1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": q2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": q3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": q4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": q5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": q6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "18":
                 switch (horario.getSemana()){
-                    case "1": r1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": r2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": r3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": r4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": r5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": r6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": r1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": r2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": r3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": r4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": r5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": r6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
             case "19":
                 switch (horario.getSemana()){
-                    case "1": s1.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "2": s2.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "3": s3.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "4": s4.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "5": s5.setBackgroundColor(Color.rgb(223, 240, 216));break;
-                    case "6": s6.setBackgroundColor(Color.rgb(223, 240, 216));break;
+                    case "1": s1.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "2": s2.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "3": s3.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "4": s4.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "5": s5.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
+                    case "6": s6.setBackgroundColor(Color.rgb(colors.get(0), colors.get(1), colors.get(2)));break;
                 }
             break;
         }
