@@ -2,12 +2,7 @@ package com.example.jonathan.wally;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -39,8 +34,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         homeViewPager = findViewById(R.id.homeViewPager);
-        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
-        homeViewPager.setAdapter(swipeAdapter);
+        HomeSwipeAdapter homeSwipeAdapter = new HomeSwipeAdapter(getSupportFragmentManager());
+        homeViewPager.setAdapter(homeSwipeAdapter);
     }
 
     @Override
@@ -84,7 +79,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (id){
             case R.id.nav_searchWally:
-                it = new Intent(this, SearchWally.class);
+                it = new Intent(this, SearchProfessor.class);
                 startActivity(it);
                 break;
         }
