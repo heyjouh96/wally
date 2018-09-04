@@ -1,4 +1,4 @@
-package com.example.jonathan.wally;
+package com.example.jonathan.wally.Home;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.jonathan.wally.R;
 
 import java.util.ArrayList;
 

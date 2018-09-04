@@ -1,4 +1,4 @@
-package com.example.jonathan.wally;
+package com.example.jonathan.wally.Responses;
 
 import java.util.ArrayList;
 

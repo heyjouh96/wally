@@ -1,4 +1,4 @@
-package com.example.jonathan.wally;
+package com.example.jonathan.wally.Search;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.jonathan.wally.R;
+import com.example.jonathan.wally.Responses.SearchWallyResponse;
+import com.example.jonathan.wally.Schedule.ScheduleProfessor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
