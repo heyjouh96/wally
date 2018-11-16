@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jonathan.wally.Schedule.ScheduleProfessor">
+
+    <TextView
+        android:id="@+id/txtNomeWally"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Carregando..."
+        android:textAlignment="center"
+        android:textSize="23dp"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:id="@+id/tableheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtNomeWally">
+        <!-- header -->
+        <TableRow
+            android:id="@+id/trHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="71dp"
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="horarios"
+                android:textColor="#aaa"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="SEG"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="TER"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="QUA"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="QUI"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="SEX"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_weight="0.1"
+                android:padding="5dp"
+                android:text="SAB"
+                android:textAlignment="center" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tableheader">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <!-- body -->
+            <TableRow
+                android:id="@+id/trHorarios1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="19dp"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="07:30"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/a6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="08:20"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/b6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="09:10"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/c6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="09:20"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/d6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="10:10"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/e6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="11:00"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/f6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="11:50"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/g6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="13:20"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/h6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="14:10"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/i6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+            <!-- J (15:00) -->
+            <TableRow
+                android:id="@+id/trHorarios10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="15:00"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/j6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="15:50"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/k6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="16:40"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/l6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="16:50"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/m6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="17:40"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/n6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="19:00"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/o6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="19:50"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/p6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="20:40"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/q6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="20:50"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/r6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/trHorarios19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text="21:40"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s1"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s2"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s3"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s4"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s5"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/s6"
+                    android:layout_weight="0.1"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchWally" />
-        <activity android:name=".ScheduleWally"></activity>
+        <activity android:name=".Search.SearchProfessor" />
+        <activity android:name=".Schedule.ScheduleProfessor"></activity>
     </application>
 
 </manifest>
