@@ -70,7 +70,7 @@ public class SearchWally extends AppCompatActivity {
     private void getWallyResponse(String filtro) throws IOException{
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://www.fatecrl.edu.br/wallyAPI/wally/"+filtro)
+                .url("https://fatecrl.edu.br/wally/getWally/"+filtro)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -93,7 +93,8 @@ public class SearchWally extends AppCompatActivity {
                             for (int i = 0; i < json.length(); i++){
                                 wally = new SearchWallyResponse(json.getJSONObject(i).getString("nome"),
                                         json.getJSONObject(i).getString("apelido"),
-                                        json.getJSONObject(i).getInt("id"));
+                                        json.getJSONObject(i).getInt("id"),
+                                        json.getJSONObject(i).getString("img"));
 
                                 wallyArr.add(wally);
                             }

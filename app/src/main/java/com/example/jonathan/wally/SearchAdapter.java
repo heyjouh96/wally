@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -40,9 +42,11 @@ public class SearchAdapter extends RecyclerView.Adapter {
         String nome = wally.get(position).getNome();
         String apelido = wally.get(position).getApelido();
         int id = wally.get(position).getId();
+        String img = wally.get(position).getImg();
         h.txtNome.setText(nome);
         h.txtApelido.setText(apelido);
         h.container.setTag(""+id);
+        Picasso.get().load(img).into(h.imgWally);
 
     }
 
