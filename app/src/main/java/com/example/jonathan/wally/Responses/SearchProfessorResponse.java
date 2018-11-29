@@ -1,5 +1,7 @@
 package com.example.jonathan.wally.Responses;
 
+import org.json.JSONObject;
+
 /**
  * Created by Jonathan on 05/06/2018.
  */
@@ -23,6 +25,6 @@ public class SearchProfessorResponse {
     public String getApelido(){return apelido;}
     public void setId(int id){this.id = id;}
     public int getId(){return id;}
-    public void setImg(String img){this.apelido = img;}
+    public void setImg(String img){this.img = img;}
     public String getImg(){return img;}
 }

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.jonathan.wally.R;
+import com.example.jonathan.wally.Responses.HorarioProfessor;
 import com.example.jonathan.wally.Responses.ScheduleProfessorResponse;
 import com.example.jonathan.wally.Responses.WallyHorario;
 
@@ -25,7 +26,8 @@ import okhttp3.Response;
 
 public class ScheduleProfessor extends AppCompatActivity {
 
-    WallyHorario horario;
+    HorarioProfessor horario;
+
     ScheduleProfessorResponse wally;
     TextView txtNomeWally;
     TextView a1, a2, a3, a4, a5, a6;
@@ -202,7 +204,7 @@ public class ScheduleProfessor extends AppCompatActivity {
     private void getWallyScheduleResponse(int id) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://www.fatecrl.edu.br/wallyAPI/wallyHorario/"+id)
+                .url("https://fatecrl.edu.br/wally/getHorario/"+id)
                 //.url("http://localhost/rest/index.php/wallyapi/wallySchedule/")
                 .build();
 
@@ -221,8 +223,10 @@ public class ScheduleProfessor extends AppCompatActivity {
                     public void run() {
                         try {
                             JSONObject json = new JSONObject(myResponse);
-                            JSONArray horarios = json.getJSONArray("horarios");
-                            ArrayList<WallyHorario> horariosArr = new ArrayList<>();
+                            horario = new HorarioProfessor(json.getJSONObject("horarios"));
+
+
+                            /*ArrayList<WallyHorario> horariosArr = new ArrayList<>();
 
                             for (int i = 0; i < horarios.length(); i++) {
                                 horario = new WallyHorario(horarios.getJSONObject(i).getString("TB_Hora_id_hora"),
@@ -230,15 +234,20 @@ public class ScheduleProfessor extends AppCompatActivity {
                                         horarios.getJSONObject(i).getString("ds_sigla_curso"));
 
                                 horariosArr.add(horario);
-                            }
+                            }*/
 
-                            wally = new ScheduleProfessorResponse(json.getJSONObject("professor").getString("nm_pessoa")
-                                    , horariosArr);
-                            txtNomeWally.setText(wally.getNome());
+                            /*wally = new ScheduleProfessorResponse(json.getJSONObject("professor").getString("nm_pessoa")
+                                    , horariosArr);*/
+                            txtNomeWally.setText(
+                                    horario.getHorarios()
+                                            .getJSONObject("dias")
+                                            .getJSONArray("Quarta")
+                                            .getJSONObject(0)
+                                            .getString("hora"));
 
-                            for (WallyHorario h : wally.getHorarios()){
+                            /*for (WallyHorario h : wally.getHorarios()){
                                 fillSchedule(h);
-                            }
+                            }*/
 
                         } catch (JSONException e) {
                             e.printStackTrace();

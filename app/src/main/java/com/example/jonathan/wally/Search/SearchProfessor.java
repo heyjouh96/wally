@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.jonathan.wally.R;
+import com.example.jonathan.wally.Responses.HorarioProfessor;
 import com.example.jonathan.wally.Responses.SearchProfessorResponse;
 import com.example.jonathan.wally.Schedule.ScheduleProfessor;
 import com.example.jonathan.wally.Search.SearchProfessorAdapter;

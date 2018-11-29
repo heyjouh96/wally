@@ -17,13 +17,13 @@ public class SearchProfessorViewHolder extends RecyclerView.ViewHolder {
 
     final TextView txtNome, txtApelido;
     final RelativeLayout container;
-    final ImageView imgWally;
+    //final ImageView imgWally;
 
     public SearchProfessorViewHolder(View view) {
         super(view);
         txtNome = view.findViewById(R.id.txtNome);
         txtApelido = view.findViewById(R.id.txtApelido);
         container = view.findViewById(R.id.container);
-        imgWally = view.findViewById(R.id.imgWally);
+        //imgWally = view.findViewById(R.id.imgWally);
     }
 }
