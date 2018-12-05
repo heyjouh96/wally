@@ -32,7 +32,7 @@ public class ScheduleProfessor extends AppCompatActivity {
     HorarioProfessor horario;
 
     ScheduleProfessorResponse wally;
-    TextView txtNomeWally;
+    TextView txtNomeWally, txtEmailWally;
     GridLayout gridSegunda, gridTerca, gridQuarta, gridQuinta, gridSexta, gridSabado;
 
     @Override
@@ -44,6 +44,7 @@ public class ScheduleProfessor extends AppCompatActivity {
         int id = it.getIntExtra("id", 0);
 
         txtNomeWally = findViewById(R.id.txtNomeWally);
+        txtEmailWally = findViewById(R.id.txtEmailWally);
         gridSegunda = findViewById(R.id.gridSegunda);
         gridTerca = findViewById(R.id.gridTerca);
         gridQuarta = findViewById(R.id.gridQuarta);
@@ -82,7 +83,9 @@ public class ScheduleProfessor extends AppCompatActivity {
                     public void run() {
                         try {
                             JSONObject json = new JSONObject(myResponse);
-                            horario = new HorarioProfessor(json.getJSONObject("horarios"));
+                            horario = new HorarioProfessor(json.getJSONObject("horarios")
+                                                            ,json.getString("nm_professor")
+                                                            ,json.getString("email"));
 
                             fillSchedule(horario);
 
@@ -100,137 +103,195 @@ public class ScheduleProfessor extends AppCompatActivity {
     public void fillSchedule(HorarioProfessor horario) throws JSONException {
         int coluna = 0;
         JSONObject horarios = horario.getHorarios().getJSONObject("dias");
+        String nome = horario.getNomeProfessor();
+        String email = horario.getEmail();
+
+        txtNomeWally.setText(nome);
+        txtEmailWally.setText(email);
 
         // segunda
-        for(int i = 0; i <= horarios.getJSONArray("Segunda").length() -1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Segunda").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Segunda")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridSegunda.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for(int i = 0; i <= horarios.getJSONArray("Segunda").length() -1; i++){
+                if(coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Segunda")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridSegunda.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
+
         coluna = 0;
         // terça
-        for(int i = 0; i <= horarios.getJSONArray("Terca").length()-1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Terca").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Terca")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridTerca.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for (int i = 0; i <= horarios.getJSONArray("Terca").length() - 1; i++) {
+                if (coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Terca")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridTerca.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
+
         coluna = 0;
         // quarta
-        for(int i = 0; i <= horarios.getJSONArray("Quarta").length()-1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Quarta").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Quarta")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridQuarta.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for (int i = 0; i <= horarios.getJSONArray("Quarta").length() - 1; i++) {
+                if (coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Quarta")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridQuarta.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
+
         coluna = 0;
         // quinta
-        for(int i = 0; i <= horarios.getJSONArray("Quinta").length()-1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Quinta").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Quinta")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridQuinta.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for (int i = 0; i <= horarios.getJSONArray("Quinta").length() - 1; i++) {
+                if (coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Quinta")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridQuinta.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
+
         coluna = 0;
         // sexta
-        for(int i = 0; i <= horarios.getJSONArray("Sexta").length()-1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Sexta").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Sexta")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridSexta.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for (int i = 0; i <= horarios.getJSONArray("Sexta").length() - 1; i++) {
+                if (coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Sexta")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridSexta.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
+
         coluna = 0;
         // sabado
-        for(int i = 0; i <= horarios.getJSONArray("Sabado").length()-1; i++){
-            if(coluna == 4) {
-                coluna = 0;
-            }
+        if (horarios.getJSONArray("Sabado").length() == 0) {
             TextView ds_horario = new TextView(ScheduleProfessor.this);
-            ds_horario.setText(
-                    horarios.getJSONArray("Sabado")
-                            .getJSONObject(i)
-                            .getString("hora").substring(0, 5));
-
-            GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.setMargins(0, 5, 5, 0);
-            ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
-            ds_horario.setTextColor(getResources().getColor(R.color.white));
-            ds_horario.setPadding(10, 10, 10, 10);
-            ds_horario.setTextSize(20);
+            ds_horario.setText("Ausente");
+            ds_horario.setTextSize(12);
+            ds_horario.setTextColor(getResources().getColor(R.color.cinza));
             gridSabado.addView(ds_horario);
-            ds_horario.setLayoutParams(params);
-            coluna++;
+        } else {
+            for (int i = 0; i <= horarios.getJSONArray("Sabado").length() - 1; i++) {
+                if (coluna == 4) {
+                    coluna = 0;
+                }
+                TextView ds_horario = new TextView(ScheduleProfessor.this);
+                ds_horario.setText(
+                        horarios.getJSONArray("Sabado")
+                                .getJSONObject(i)
+                                .getString("hora").substring(0, 5));
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setMargins(0, 5, 5, 0);
+                ds_horario.setBackgroundColor(getResources().getColor(R.color.fatecRed));
+                ds_horario.setTextColor(getResources().getColor(R.color.white));
+                ds_horario.setPadding(10, 10, 10, 10);
+                ds_horario.setTextSize(20);
+                gridSabado.addView(ds_horario);
+                ds_horario.setLayoutParams(params);
+                coluna++;
+            }
         }
     }
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp"
     tools:context="com.example.jonathan.wally.Schedule.ScheduleProfessor">
 
@@ -13,15 +13,24 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingBottom="5dp"
-        android:text="Dorotea Vilnova Garcia"
+        android:text="Aguarde..."
         android:textSize="23dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtEmailWally"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text=""
+        android:textSize="16dp"
+        android:layout_below="@id/txtNomeWally"/>
     
     <GridLayout
         android:id="@+id/borda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtNomeWally"
+        android:layout_below="@id/txtEmailWally"
         >
 
         <TextView
@@ -37,132 +46,137 @@
             android:background="#e7e7e7"/>
     </GridLayout>
 
-    <TextView
-        android:id="@+id/txtSegunda"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Segunda"
-        android:textStyle="bold"
-        android:layout_below="@+id/borda"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_below="@id/borda"
+        android:layout_marginTop="10dp">
 
-    <GridLayout
-        android:id="@+id/gridSegunda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtSegunda"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/txtSegunda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Segunda"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
 
-        <!-- <TextView
-            android:text="19:00"
-            android:padding="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/fatecRed"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            /> -->
+            <GridLayout
+                android:id="@+id/gridSegunda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSegunda"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
 
-    </GridLayout>
+            </GridLayout>
 
-    <TextView
-        android:id="@+id/txtTerca"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Terça"
-        android:textStyle="bold"
-        android:layout_below="@+id/gridSegunda"
-        android:layout_marginTop="15dp"
-        />
+            <TextView
+                android:id="@+id/txtTerca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Terça"
+                android:textStyle="bold"
+                android:layout_below="@+id/gridSegunda"
+                android:layout_marginTop="15dp"
+                />
 
-    <GridLayout
-        android:id="@+id/gridTerca"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtTerca"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
+            <GridLayout
+                android:id="@+id/gridTerca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTerca"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
 
 
-    </GridLayout>
+            </GridLayout>
 
-    <TextView
-        android:id="@+id/txtQuarta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quarta"
-        android:textStyle="bold"
-        android:layout_below="@+id/gridTerca"
-        android:layout_marginTop="15dp"
-        />
+            <TextView
+                android:id="@+id/txtQuarta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quarta"
+                android:textStyle="bold"
+                android:layout_below="@+id/gridTerca"
+                android:layout_marginTop="15dp"
+                />
 
-    <GridLayout
-        android:id="@+id/gridQuarta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtQuarta"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
-    </GridLayout>
+            <GridLayout
+                android:id="@+id/gridQuarta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtQuarta"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
+            </GridLayout>
 
-    <TextView
-        android:id="@+id/txtQuinta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quinta"
-        android:textStyle="bold"
-        android:layout_below="@+id/gridQuarta"
-        android:layout_marginTop="15dp"
-        />
+            <TextView
+                android:id="@+id/txtQuinta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quinta"
+                android:textStyle="bold"
+                android:layout_below="@+id/gridQuarta"
+                android:layout_marginTop="15dp"
+                />
 
-    <GridLayout
-        android:id="@+id/gridQuinta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtQuinta"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
-    </GridLayout>
+            <GridLayout
+                android:id="@+id/gridQuinta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtQuinta"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
+            </GridLayout>
 
-    <TextView
-        android:id="@+id/txtSexta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sexta"
-        android:textStyle="bold"
-        android:layout_below="@+id/gridQuinta"
-        android:layout_marginTop="15dp"
-        />
+            <TextView
+                android:id="@+id/txtSexta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sexta"
+                android:textStyle="bold"
+                android:layout_below="@+id/gridQuinta"
+                android:layout_marginTop="15dp"
+                />
 
-    <GridLayout
-        android:id="@+id/gridSexta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtSexta"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
-    </GridLayout>
+            <GridLayout
+                android:id="@+id/gridSexta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSexta"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
+            </GridLayout>
 
-    <TextView
-        android:id="@+id/txtSabado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sabado"
-        android:textStyle="bold"
-        android:layout_below="@+id/gridSexta"
-        android:layout_marginTop="15dp"
-        />
+            <TextView
+                android:id="@+id/txtSabado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sabado"
+                android:textStyle="bold"
+                android:layout_below="@+id/gridSexta"
+                android:layout_marginTop="15dp"
+                />
 
-    <GridLayout
-        android:id="@+id/gridSabado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtSabado"
-        android:layout_marginTop="10dp"
-        android:columnCount="5">
-    </GridLayout>
+            <GridLayout
+                android:id="@+id/gridSabado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSabado"
+                android:layout_marginTop="10dp"
+                android:columnCount="5">
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 
 
 </RelativeLayout>
