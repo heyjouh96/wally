@@ -8,9 +8,40 @@
     android:onClick="wallySchedule"
     android:layout_height="wrap_content">
 
-    <GridLayout
+    <ImageView
+        android:id="@+id/imgWally"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/txtNome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imgWally"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="19dp"
+        android:text="Davi Silvestre Moreira dos Reis Reis"
+        android:layout_toRightOf="@+id/imgWally" />
+
+    <TextView
+        android:id="@+id/txtApelido"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Chiara"
+        android:textColor="#aaa"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/txtNome"
+        android:layout_toEndOf="@id/imgWally"
+        android:layout_toRightOf="@id/imgWally"/>
+
+    <!--<GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabela">
 
         <ImageView
             android:id="@+id/imgWally"
@@ -23,7 +54,7 @@
         <TextView
             android:id="@+id/txtNome"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_columnWeight="0.5"
             android:text="Jorge Chiara"
             android:padding="20dp"
@@ -33,12 +64,12 @@
         <TextView
             android:id="@+id/txtApelido"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_columnWeight="0.3"
             android:text="Chiara"
             android:textColor="#aaa"
             android:textAlignment="center"
             android:padding="20dp" />
-    </GridLayout>
+    </GridLayout>-->
 
 </RelativeLayout>

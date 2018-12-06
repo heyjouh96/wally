@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jonathan.wally.R;
@@ -29,9 +31,11 @@ import okhttp3.Response;
 
 public class SearchProfessor extends AppCompatActivity {
 
+    RelativeLayout searchLayout;
     RecyclerView recyclerView;
     SearchProfessorResponse wally;
     TextView txtCarregando;
+    ImageView imgLogo;
     EditText edtPesq;
 
     @Override
@@ -40,8 +44,10 @@ public class SearchProfessor extends AppCompatActivity {
         setContentView(R.layout.search_professor);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        searchLayout = findViewById(R.id.searchLayout);
         recyclerView = findViewById(R.id.search_recycler);
         txtCarregando = findViewById(R.id.txtCarregando);
+        imgLogo = findViewById(R.id.imgLogo);
         edtPesq = findViewById(R.id.edtPesq);
     }
 
@@ -108,6 +114,7 @@ public class SearchProfessor extends AppCompatActivity {
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setVisibility(View.VISIBLE);
                             txtCarregando.setText("");
+                            searchLayout.removeView(imgLogo);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -48,7 +48,7 @@ public class SearchProfessorAdapter extends RecyclerView.Adapter {
         h.txtApelido.setText(apelido);
         h.container.setTag(""+id);
 
-        Picasso.get().load(img).resize(50, 50).centerCrop().into(h.imgWally);
+        Picasso.get().load(img).resize(500, 560).centerCrop().into(h.imgWally);
     }
 
     @Override
